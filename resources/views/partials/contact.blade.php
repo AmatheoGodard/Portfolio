@@ -29,7 +29,7 @@
                         </div>
                         <div>
                             <p class="text-sm text-gray-600">Email</p>
-                            <p class="font-medium text-gray-900">amatheo.godard18.04@gmail.com</p>
+                            <p class="font-medium text-gray-900">contact@agodard.fr</p>
                         </div>
                     </div>
 
