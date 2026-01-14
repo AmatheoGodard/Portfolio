@@ -57,7 +57,7 @@
             <div class="relative hidden lg:block">
                 <div class="hero-image-container relative rounded-2xl overflow-hidden shadow-2xl">
                     <img 
-                        src="https://images.unsplash.com/photo-1623679072629-3aaa0192a391?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBkZXNrfGVufDF8fHx8MTc2ODMxMjEyN3ww&ixlib=rb-4.1.0&q=80&w=1080" 
+                        scr="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                         alt="Modern workspace"
                         class="w-full h-auto"
                     >
