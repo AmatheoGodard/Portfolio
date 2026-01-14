@@ -48,7 +48,7 @@
         'description' => 'Portfolio personnel développé avec Laravel pour présenter mes compétences, projets et expériences professionnelles de manière interactive et moderne.',
         'image' => 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1080&q=80',
         'tags' => ['Laravel'],
-        'github' => '#',
+        'github' => 'https://github.com/AmatheoGodard/Portfolio',
         'demo' => '#hero',
         ],
         ];
