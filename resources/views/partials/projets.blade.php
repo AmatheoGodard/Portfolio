@@ -13,7 +13,7 @@
         $projects = [
         [
         'title' => 'Nuit de l\'Informatique 2025',
-        'description' => 'Conception et développement d\'une base de données relationnelle complexe avec procédures stockées et optimisation des requêtes.',
+        'description' => 'Participation à la Nuit de l’Info 2025 : un défi informatique intense combinant créativité, travail d’équipe et développement de solutions innovantes.',
         'image' => 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1080&q=80',
         'tags' => ['PHP', 'Travail en équipe', 'Gestion de projet'],
         'github' => 'https://github.com/AmatheoGodard/Nuit-info2025',
