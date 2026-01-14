@@ -24,7 +24,7 @@
                     ['name' => 'Linux', 'icon' => 'terminal', 'gradient' => 'from-gray-600 to-gray-800'],
                     ['name' => 'Netbeans', 'icon' => 'code-2', 'gradient' => 'from-orange-500 to-orange-700'],
                     ['name' => 'JetBrains', 'icon' => 'code-2', 'gradient' => 'from-green-500 to-green-700'],
-                    ['name' => 'Plankal', 'icon' => 'layout-dashboard', 'gradient' => 'from-indigo-500 to-indigo-700'],
+                    ['name' => 'Planka', 'icon' => 'layout-dashboard', 'gradient' => 'from-indigo-500 to-indigo-700'],
                     ['name' => 'OpenProject', 'icon' => 'layout-dashboard', 'gradient' => 'from-yellow-500 to-yellow-700'],
                 ],
                 'Frameworks' => [
