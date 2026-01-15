@@ -26,7 +26,7 @@ Route::post('/jury/login', [AuthController::class, 'login'])->name('login.submit
 
 // Routes protégées du jury
 Route::middleware(['jury'])->group(function () {
-    Route::get('/jury/dashboard', [JuryController::class, 'dashboard'])->name('jury.dashboard');
+    Route::get('/jury', [JuryController::class, 'dashboard'])->name('jury.dashboard');
     Route::get('/jury/download/{filename}', [JuryController::class, 'downloadFile'])->name('jury.download');
     Route::get('/jury/download-all', [JuryController::class, 'downloadAll'])->name('jury.downloadAll');
     Route::post('/jury/logout', [AuthController::class, 'logout'])->name('logout');
