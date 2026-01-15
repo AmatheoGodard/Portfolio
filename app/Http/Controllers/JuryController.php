@@ -52,10 +52,10 @@ class JuryController extends Controller
             [
                 'title' => 'Attestations de Stage',
                 'description' => 'Attestations et conventions de stage',
-                'filename' => 'Attestations_Stage.pdf',
+                'filename' => 'Attestation_de_stage_Sevremoine.pdf',
                 'icon' => 'award',
                 'category' => 'Stages',
-                'size' => $this->getFileSize('Attestations_Stage.pdf'),
+                'size' => $this->getFileSize('Attestation_de_stage_Sevremoine.pdf'),
             ],
             [
                 'title' => 'Veille Technologique',
