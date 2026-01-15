@@ -14,14 +14,20 @@
                 <a href="#competences" class="nav-link text-gray-600 hover:text-indigo-500 transition-colors">Compétences</a>
                 <a href="#projets" class="nav-link text-gray-600 hover:text-indigo-500 transition-colors">Projets</a>
                 <a href="#contact" class="nav-link text-gray-600 hover:text-indigo-500 transition-colors">Contact</a>
+                <!-- NOUVEAU : Bouton Espace Jury -->
+                <a
+                    href="{{ route('login') }}"
+                    class="flex items-center gap-2 px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>Espace Jury</span>
+                </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button 
+            <button
                 id="mobile-menu-button"
-                onclick="toggleMobileMenu()" 
-                class="md:hidden p-2 text-gray-900"
-            >
+                onclick="toggleMobileMenu()"
+                class="md:hidden p-2 text-gray-900">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
