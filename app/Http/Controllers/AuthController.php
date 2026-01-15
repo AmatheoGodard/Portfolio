@@ -24,7 +24,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Traite la connexion via le champ name
+     * Traite la connexion via le champ "name"
      */
     public function login(Request $request)
     {
@@ -36,7 +36,7 @@ class AuthController extends Controller
             'password.required' => 'Le mot de passe est obligatoire',
         ]);
 
-        // Recherche l'utilisateur par name
+        // Recherche l'utilisateur par "name"
         $user = User::where('name', $request->name)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
