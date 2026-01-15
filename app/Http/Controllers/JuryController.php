@@ -105,7 +105,7 @@ class JuryController extends Controller
             'Tableau_Synthese_BTS_SIO.pdf',
             'Projet_E4_Documentation.pdf',
             'Projet_E4_Code_Source.zip',
-            'Attestations_Stage.pdf',
+            'Attestation_de_stage_Sevremoine.pdf',
             'Veille_Technologique.pdf',
             'Certifications.pdf',
             'Portfolio_Projets.pdf',
