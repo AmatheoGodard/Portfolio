@@ -33,7 +33,6 @@ class PortfolioController extends Controller
      */
     public function sendContact(Request $request)
     {
-        // Validation des données
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -48,19 +47,21 @@ class PortfolioController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
+            return redirect('/')
                 ->withErrors($validator)
-                ->withInput();
+                ->withInput()
+                ->with('scrollToContact', true); // flag pour scroll
         }
 
         $data = $request->only(['name', 'email', 'subject', 'message']);
-
-        // TODO: Configurer l'envoi d'email
         Mail::to('contact@agodard.fr')->send(new ContactMail($data));
 
-        // Pour l'instant, on simule l'envoi
-        return redirect()->back()->with('success', 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
+        return redirect()->route('home')
+            ->with('success', 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.')
+            ->with('scrollToContact', true);
     }
+
+
 
     /**
      * Télécharge le CV
@@ -70,7 +71,7 @@ class PortfolioController extends Controller
     public function downloadCV()
     {
         $filePath = public_path('documents/CV_Amatheo_Godard.pdf');
-        
+
         if (!file_exists($filePath)) {
             return redirect()->back()->with('error', 'Le CV n\'est pas disponible pour le moment.');
         }

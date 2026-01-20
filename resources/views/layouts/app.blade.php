@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ $metaDescription ?? 'Portfolio d\'Amathéo Godard' }}">
     <meta name="author" content="Amathéo Godard">
     <title>{{ $pageTitle ?? 'Portfolio - Amathéo Godard' }}</title>
-    
+
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS CDN (pour développement rapide) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
-    
+
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     @yield('content')
 
@@ -33,7 +35,7 @@
     <script>
         // Smooth scroll pour la navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -81,7 +83,7 @@
         document.addEventListener('click', function(event) {
             const mobileMenu = document.getElementById('mobile-menu');
             const menuButton = document.getElementById('mobile-menu-button');
-            
+
             if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
                 mobileMenu.classList.add('hidden');
             }
@@ -99,5 +101,23 @@
     </script>
 
     @stack('scripts')
+    <!-- Scroll automatique vers le formulaire contact -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            @if(session('scrollToContact'))
+            const contactSection = document.querySelector("#contact");
+            if (contactSection) {
+                const offset = 80; // hauteur approximative de ton header fixe
+                const topPos = contactSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: topPos,
+                    behavior: 'smooth'
+                });
+            }
+            @endif
+        });
+    </script>
+
 </body>
+
 </html>

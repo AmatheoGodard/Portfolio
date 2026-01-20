@@ -58,20 +58,18 @@
                 <div>
                     <p class="text-sm text-gray-600 mb-4">Retrouvez-moi sur :</p>
                     <div class="flex gap-4">
-                        <a 
+                        <a
                             href="https://github.com/AmatheoGodard"" 
-                            target="_blank" 
+                            target=" _blank"
                             rel="noopener noreferrer"
-                            class="p-4 bg-gray-50 rounded-xl hover:bg-indigo-500 hover:text-white transition-colors group"
-                        >
+                            class="p-4 bg-gray-50 rounded-xl hover:bg-indigo-500 hover:text-white transition-colors group">
                             <i data-lucide="github" class="w-6 h-6 text-gray-600 group-hover:text-white"></i>
                         </a>
-                        <a 
-                            href="https://linkedin.com/in/amathéo-godard-4ba422244" 
-                            target="_blank" 
+                        <a
+                            href="https://linkedin.com/in/amathéo-godard-4ba422244"
+                            target="_blank"
                             rel="noopener noreferrer"
-                            class="p-4 bg-gray-50 rounded-xl hover:bg-indigo-500 hover:text-white transition-colors group"
-                        >
+                            class="p-4 bg-gray-50 rounded-xl hover:bg-indigo-500 hover:text-white transition-colors group">
                             <i data-lucide="linkedin" class="w-6 h-6 text-gray-600 group-hover:text-white"></i>
                         </a>
                     </div>
@@ -81,35 +79,34 @@
             <!-- Contact Form -->
             <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
                 @if(session('success'))
-                    <div class="mb-6 p-4 bg-green-100 text-green-700 rounded-lg">
-                        {{ session('success') }}
-                    </div>
+                <div class="mb-6 p-4 bg-green-100 text-green-700 rounded-lg">
+                    {{ session('success') }}
+                </div>
                 @endif
 
                 @if(session('error'))
-                    <div class="mb-6 p-4 bg-red-100 text-red-700 rounded-lg">
-                        {{ session('error') }}
-                    </div>
+                <div class="mb-6 p-4 bg-red-100 text-red-700 rounded-lg">
+                    {{ session('error') }}
+                </div>
                 @endif
 
                 <form action="{{ route('contact.send') }}" method="POST" class="space-y-6">
                     @csrf
-                    
+
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-900 mb-2">
                             Nom complet
                         </label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
                             value="{{ old('name') }}"
                             class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                             placeholder="Votre nom"
-                            required
-                        >
+                            required>
                         @error('name')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -117,17 +114,16 @@
                         <label for="email" class="block text-sm font-medium text-gray-900 mb-2">
                             Email
                         </label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
                             value="{{ old('email') }}"
                             class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                             placeholder="votre@email.com"
-                            required
-                        >
+                            required>
                         @error('email')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -135,17 +131,16 @@
                         <label for="subject" class="block text-sm font-medium text-gray-900 mb-2">
                             Sujet
                         </label>
-                        <input 
-                            type="text" 
-                            id="subject" 
-                            name="subject" 
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
                             value="{{ old('subject') }}"
                             class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                             placeholder="Sujet de votre message"
-                            required
-                        >
+                            required>
                         @error('subject')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -153,23 +148,28 @@
                         <label for="message" class="block text-sm font-medium text-gray-900 mb-2">
                             Message
                         </label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
+                        <textarea
+                            id="message"
+                            name="message"
                             rows="5"
                             class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
                             placeholder="Votre message..."
-                            required
-                        >{{ old('message') }}</textarea>
+                            required>{{ old('message') }}</textarea>
                         @error('message')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    <button 
+                    <!-- Mention RGPD -->
+                    <p class="mt-2 text-sm text-gray-500">
+                        Les informations saisies sont utilisées uniquement pour répondre à votre demande.
+                        Elles ne seront pas stockées sur ce site ni partagées à des tiers.
+                    </p>
+
+
+                    <button
                         type="submit"
-                        class="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
-                    >
+                        class="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                         <i data-lucide="send" class="w-5 h-5"></i>
                         Envoyer le message
                     </button>
@@ -177,4 +177,3 @@
             </div>
         </div>
     </div>
-</section>

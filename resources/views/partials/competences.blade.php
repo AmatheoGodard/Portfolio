@@ -21,7 +21,6 @@
                 'Outils' => [
                     ['name' => 'Git', 'icon' => 'git-branch', 'gradient' => 'from-red-400 to-red-600'],
                     ['name' => 'VS Code', 'icon' => 'code-2', 'gradient' => 'from-blue-500 to-blue-700'],
-                    ['name' => 'Linux', 'icon' => 'terminal', 'gradient' => 'from-gray-600 to-gray-800'],
                     ['name' => 'Netbeans', 'icon' => 'code-2', 'gradient' => 'from-orange-500 to-orange-700'],
                     ['name' => 'JetBrains', 'icon' => 'code-2', 'gradient' => 'from-green-500 to-green-700'],
                     ['name' => 'Planka', 'icon' => 'layout-dashboard', 'gradient' => 'from-indigo-500 to-indigo-700'],
