@@ -201,7 +201,7 @@
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            Pour toute question, contactez : amatheo.godard@email.com
+                            Pour toute question, contactez : contact@agodard.fr
                         </li>
                     </ul>
                 </div>

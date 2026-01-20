@@ -80,6 +80,10 @@
                     'image' => 'images/certifications/ANSSI/Certification_ANSSI.png',
                 ],
                 [
+                    'name' => 'PIX',
+                    'image' => 'images/certifications/Pix/Certification_PIX.png',
+                ],
+                [
                     'name' => 'SoloLearn - HTML',
                     'image' => 'images/certifications/Sololearn/Introduction_HTML.jpg',
                 ],
