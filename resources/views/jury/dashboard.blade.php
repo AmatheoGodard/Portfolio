@@ -193,7 +193,7 @@
                     <ul class="space-y-2 text-sm text-gray-600">
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
-                            Tous les documents sont au format PDF ou ZIP
+                            Tous les documents sont au format PDF ou TAR.GZ
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
