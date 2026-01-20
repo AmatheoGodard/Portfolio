@@ -28,26 +28,26 @@ class JuryController extends Controller
             [
                 'title' => 'Certifications',
                 'description' => 'Certificats et formations complémentaires',
-                'filename' => 'Certifications.pdf',
+                'filename' => 'Dossier_certification.tar.gz',
                 'icon' => 'shield-check',
                 'category' => 'Profil',
-                'size' => $this->getFileSize('Certifications.pdf'),
+                'size' => $this->getFileSize('Dossier_certification.tar.gz'),
             ],
             [
                 'title' => 'Tableau de Synthèse',
                 'description' => 'Tableau récapitulatif des compétences et réalisations',
-                'filename' => 'Tableau_Synthese_BTS_SIO.pdf',
+                'filename' => 'E5_tableau_de_synthese_Amatheo_GODARD.pdf',
                 'icon' => 'table',
                 'category' => 'Documents BTS',
-                'size' => $this->getFileSize('Tableau_Synthese_BTS_SIO.pdf'),
+                'size' => $this->getFileSize('E5_tableau_de_synthese_Amatheo_GODARD.pdf'),
             ],
             [
                 'title' => 'Dossier de preuve',
                 'description' => 'Dossier de preuve complet pour l\'épreuve E5',
-                'filename' => 'Dossier_de_preuve_E5.pdf',
+                'filename' => 'Dossier_preuve_E5.pdf',
                 'icon' => 'file-text',
                 'category' => 'Documents BTS',
-                'size' => $this->getFileSize('Dossier_de_preuve_E5.pdf'),
+                'size' => $this->getFileSize('Dossier_preuve_E5.pdf'),
             ],
             [
                 'title' => 'Documents Annexe',
@@ -86,9 +86,9 @@ class JuryController extends Controller
         // Sécurité : autoriser uniquement certains fichiers
         $allowedFiles = [
             'CV_Amatheo_Godard.pdf',
-            'Certifications.tar.gz',
-            'Tableau_Synthese_BTS_SIO.pdf',
-            'Dossier_de_preuve_E5.pdf',
+            'Dossier_certification.tar.gz',
+            'E5_tableau_de_synthese_Amatheo_GODARD.pdf',
+            'Dossier_preuve_E5.pdf',
             'Documents_Annexe.tar.gz',
             'Attestation_de_stage_Sevremoine.pdf',
         ];
