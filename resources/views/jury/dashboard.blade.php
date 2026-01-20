@@ -94,7 +94,7 @@
                     class="flex items-center gap-2 px-6 py-3 bg-white text-indigo-500 font-medium rounded-lg hover:bg-gray-50 transition-colors whitespace-nowrap"
                 >
                     <i data-lucide="download" class="w-5 h-5"></i>
-                    Tout télécharger (ZIP)
+                    Tout télécharger (TAR.GZ)
                 </a>
             </div>
         </div>
