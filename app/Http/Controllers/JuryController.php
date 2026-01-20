@@ -58,23 +58,7 @@ class JuryController extends Controller
                 'size' => $this->getFileSize('Documents_Annexe.tar.gz'),
             ],
             [
-                'title' => 'Projet E4 - Documentation',
-                'description' => 'Documentation complète du projet E4',
-                'filename' => 'Projet_E4_Documentation.pdf',
-                'icon' => 'book-open',
-                'category' => 'Projets',
-                'size' => $this->getFileSize('Projet_E4_Documentation.pdf'),
-            ],
-            [
-                'title' => 'Projet E4 - Code Source',
-                'description' => 'Archive du code source du projet E4',
-                'filename' => 'Projet_E4_Code_Source.zip',
-                'icon' => 'code',
-                'category' => 'Projets',
-                'size' => $this->getFileSize('Projet_E4_Code_Source.zip'),
-            ],
-            [
-                'title' => 'Attestations de Stage',
+                'title' => 'Attestations de Stage - Commune Sèvremoine',
                 'description' => 'Attestations et conventions de stage',
                 'filename' => 'Attestation_de_stage_Sevremoine.pdf',
                 'icon' => 'award',
@@ -102,13 +86,11 @@ class JuryController extends Controller
         // Sécurité : autoriser uniquement certains fichiers
         $allowedFiles = [
             'CV_Amatheo_Godard.pdf',
+            'Certifications.tar.gz',
             'Tableau_Synthese_BTS_SIO.pdf',
-            'Projet_E4_Documentation.pdf',
-            'Projet_E4_Code_Source.zip',
+            'Dossier_de_preuve_E5.pdf',
+            'Documents_Annexe.tar.gz',
             'Attestation_de_stage_Sevremoine.pdf',
-            'Veille_Technologique.pdf',
-            'Certifications.pdf',
-            'Portfolio_Projets.pdf',
         ];
 
         if (!in_array($filename, $allowedFiles)) {
@@ -125,31 +107,55 @@ class JuryController extends Controller
     }
 
     /**
-     * Télécharge tous les fichiers en archive ZIP
+     * Télécharge tous les fichiers en archive TAR GZ
      *
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
     public function downloadAll()
     {
-        $zip = new \ZipArchive();
-        $zipFileName = 'Documents_BTS_Amatheo_Godard_' . date('Y-m-d') . '.zip';
-        $zipFilePath = storage_path('app/' . $zipFileName);
+        $fileName = 'Documents_BTS_Amatheo_Godard_' . date('Y-m-d');
+        $tarPath = storage_path("app/{$fileName}.tar");
+        $tarGzPath = storage_path("app/{$fileName}.tar.gz");
 
-        if ($zip->open($zipFilePath, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) === TRUE) {
+        try {
+            // Nettoyage si déjà existant
+            if (file_exists($tarPath)) {
+                unlink($tarPath);
+            }
+            if (file_exists($tarGzPath)) {
+                unlink($tarGzPath);
+            }
+
+            // Création du TAR
+            $phar = new \PharData($tarPath);
+
             $documentsPath = public_path('documents/jury/');
             $files = File::files($documentsPath);
 
             foreach ($files as $file) {
-                $zip->addFile($file->getRealPath(), $file->getFilename());
+                $phar->addFile(
+                    $file->getRealPath(),
+                    $file->getFilename()
+                );
             }
 
-            $zip->close();
+            // Compression en .tar.gz
+            $phar->compress(\Phar::GZ);
 
-            return response()->download($zipFilePath, $zipFileName)->deleteFileAfterSend(true);
+            // Suppression du .tar non compressé
+            unset($phar);
+            unlink($tarPath);
+
+            return response()
+                ->download($tarGzPath)
+                ->deleteFileAfterSend(true);
+        } catch (\Exception $e) {
+            return redirect()
+                ->back()
+                ->with('error', 'Impossible de créer l\'archive.');
         }
-
-        return redirect()->back()->with('error', 'Impossible de créer l\'archive.');
     }
+
 
     /**
      * Obtient la taille d'un fichier de manière lisible
