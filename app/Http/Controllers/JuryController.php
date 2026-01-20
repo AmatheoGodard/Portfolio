@@ -50,6 +50,14 @@ class JuryController extends Controller
                 'size' => $this->getFileSize('Dossier_de_preuve_E5.pdf'),
             ],
             [
+                'title' => 'Documents Annexe',
+                'description' => 'Documents annexes du dossier',
+                'filename' => 'Documents_Annexe.tar.gz',
+                'icon' => 'file-text',
+                'category' => 'Documents BTS',
+                'size' => $this->getFileSize('Documents_Annexe.tar.gz'),
+            ],
+            [
                 'title' => 'Projet E4 - Documentation',
                 'description' => 'Documentation complète du projet E4',
                 'filename' => 'Projet_E4_Documentation.pdf',
