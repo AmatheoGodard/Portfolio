@@ -62,6 +62,8 @@
     </div>
 </section>
 
+
+<!-- Certifications Section (inchangé) -->
 <section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
@@ -72,110 +74,99 @@
                 Certifications attestant de mes compétences techniques
             </p>
         </div>
-        <!-- Certifications Section (inchangé) -->
-        <section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-                        Certifications
-                    </h2>
-                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Certifications attestant de mes compétences techniques
-                    </p>
-                </div>
 
-                @php
-                $certifications = [
-                [
-                'name' => 'ANSSI - Fondamentaux de la sécurité numérique',
-                'image' => 'images/certifications/ANSSI/Certification_ANSSI.png',
-                ],
-                [
-                'name' => 'PIX',
-                'image' => 'images/certifications/Pix/Certification_PIX.png',
-                ],
-                [
-                'name' => 'SoloLearn - HTML',
-                'image' => 'images/certifications/Sololearn/Introduction_HTML.jpg',
-                ],
-                [
-                'name' => 'SoloLearn - CSS',
-                'image' => 'images/certifications/Sololearn/Introduction_CSS.png',
-                ],
-                [
-                'name' => 'SoloLearn - SQL',
-                'image' => 'images/certifications/Sololearn/Introduction_SQL.png',
-                ],
-                [
-                'name' => 'SoloLearn - Technologies pour tous',
-                'image' => 'images/certifications/Sololearn/Technologie_pour_tous.jpg',
-                ],
-                ];
-                @endphp
+        @php
+        $certifications = [
+        [
+        'name' => 'ANSSI - Fondamentaux de la sécurité numérique',
+        'image' => 'images/certifications/ANSSI/Certification_ANSSI.png',
+        ],
+        [
+        'name' => 'PIX',
+        'image' => 'images/certifications/Pix/Certification_PIX.png',
+        ],
+        [
+        'name' => 'SoloLearn - HTML',
+        'image' => 'images/certifications/Sololearn/Introduction_HTML.jpg',
+        ],
+        [
+        'name' => 'SoloLearn - CSS',
+        'image' => 'images/certifications/Sololearn/Introduction_CSS.png',
+        ],
+        [
+        'name' => 'SoloLearn - SQL',
+        'image' => 'images/certifications/Sololearn/Introduction_SQL.png',
+        ],
+        [
+        'name' => 'SoloLearn - Technologies pour tous',
+        'image' => 'images/certifications/Sololearn/Technologie_pour_tous.jpg',
+        ],
+        ];
+        @endphp
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    @foreach($certifications as $cert)
-                    <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center group cursor-pointer certification-card" data-cert='@json($cert)'>
-                        <img
-                            src="{{ asset($cert['image']) }}"
-                            alt="Certification {{ $cert['name'] }}"
-                            class="certification-img h-32 mx-auto object-contain mb-6 group-hover:scale-105 transition-transform duration-300">
-                        <h3 class="text-xl font-bold text-gray-900">
-                            {{ $cert['name'] }}
-                        </h3>
-                    </div>
-                    @endforeach
-                </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            @foreach($certifications as $cert)
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center group cursor-pointer certification-card" data-cert='@json($cert)'>
+                <img
+                    src="{{ asset($cert['image']) }}"
+                    alt="Certification {{ $cert['name'] }}"
+                    class="certification-img h-32 mx-auto object-contain mb-6 group-hover:scale-105 transition-transform duration-300">
+                <h3 class="text-xl font-bold text-gray-900">
+                    {{ $cert['name'] }}
+                </h3>
             </div>
-        </section>
-
-        <!-- Modal Certifications -->
-        <div id="certificationModal" class="hidden fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 transition-opacity duration-300">
-            <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-xl relative animate-fadeIn">
-                <!-- Close button -->
-                <button type="button" class="absolute top-4 right-4 modal-close p-2 bg-white rounded-full shadow hover:bg-red-500 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900 hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-
-                <div class="p-6 flex flex-col items-center">
-                    <img class="modal-image max-w-full max-h-[60vh] rounded-xl shadow-2xl mb-4" src="" alt="">
-                    <h3 class="modal-title text-2xl font-bold text-gray-900 text-center"></h3>
-                </div>
-            </div>
+            @endforeach
         </div>
+    </div>
+</section>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const modal = document.getElementById('certificationModal');
-                const modalImage = modal.querySelector('.modal-image');
-                const modalTitle = modal.querySelector('.modal-title');
-                const closeBtn = modal.querySelector('.modal-close');
+<!-- Modal Certifications -->
+<div id="certificationModal" class="hidden fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-xl relative animate-fadeIn">
+        <!-- Close button -->
+        <button type="button" class="absolute top-4 right-4 modal-close p-2 bg-white rounded-full shadow hover:bg-red-500 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900 hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
 
-                document.querySelectorAll('.certification-card').forEach(card => {
-                    card.addEventListener('click', () => {
-                        const cert = JSON.parse(card.getAttribute('data-cert'));
-                        modalImage.src = cert.image;
-                        modalImage.alt = cert.name;
-                        modalTitle.textContent = cert.name;
-                        modal.classList.remove('hidden');
-                        document.body.classList.add('overflow-hidden');
-                    });
-                });
+        <div class="p-6 flex flex-col items-center">
+            <img class="modal-image max-w-full max-h-[60vh] rounded-xl shadow-2xl mb-4" src="" alt="">
+            <h3 class="modal-title text-2xl font-bold text-gray-900 text-center"></h3>
+        </div>
+    </div>
+</div>
 
-                function closeModal() {
-                    modal.classList.add('hidden');
-                    document.body.classList.remove('overflow-hidden');
-                    modalImage.src = '';
-                }
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('certificationModal');
+        const modalImage = modal.querySelector('.modal-image');
+        const modalTitle = modal.querySelector('.modal-title');
+        const closeBtn = modal.querySelector('.modal-close');
 
-                closeBtn.addEventListener('click', closeModal);
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) closeModal();
-                });
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-                });
+        document.querySelectorAll('.certification-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const cert = JSON.parse(card.getAttribute('data-cert'));
+                modalImage.src = cert.image;
+                modalImage.alt = cert.name;
+                modalTitle.textContent = cert.name;
+                modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
             });
-        </script>
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            modalImage.src = '';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        });
+    });
+</script>
