@@ -65,6 +65,14 @@ class JuryController extends Controller
                 'category' => 'Stages',
                 'size' => $this->getFileSize('Attestation_de_stage_Sevremoine.pdf'),
             ],
+            [
+                'title' => 'Attestations de Stage - 85 Micro',
+                'description' => 'Attestations et conventions de stage',
+                'filename' => 'Attestation_de_stage_85_Micro.pdf',
+                'icon' => 'award',
+                'category' => 'Stages',
+                'size' => $this->getFileSize('Attestation_de_stage_85_Micro.pdf'),  
+            ],
         ];
 
         // --- AJOUT : Calcul de la dernière mise à jour ---
