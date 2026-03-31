@@ -113,6 +113,7 @@ class JuryController extends Controller
             'Dossier_preuve_E5.pdf',
             'Documents_Annexe.tar.gz',
             'Attestation_de_stage_Sevremoine.pdf',
+            'Attestation_de_stage_85Micro.pdf',
         ];
 
         if (!in_array($filename, $allowedFiles)) {
