@@ -100,7 +100,7 @@
                     </div>
 
                     <p class="mt-2 text-sm text-gray-500">
-                        Les informations saisies sont utilisées uniquement pour répondre à votre demande et ne seront pas partagées avec des tiers.
+                        Les informations saisies sont utilisées uniquement pour répondre à votre demande et ne seront pas partagées avec des tiers. 
                     </p>
 
                     <button type="submit" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">

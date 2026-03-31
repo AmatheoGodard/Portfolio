@@ -67,9 +67,23 @@ class JuryController extends Controller
             ],
         ];
 
+        // --- AJOUT : Calcul de la dernière mise à jour ---
+        $lastTimestamp = 0;
+        foreach ($documents as $doc) {
+            $filePath = public_path('documents/jury/' . $doc['filename']);
+            if (file_exists($filePath)) {
+                $mtime = filemtime($filePath);
+                if ($mtime > $lastTimestamp) {
+                    $lastTimestamp = $mtime;
+                }
+            }
+        }
+
         $data = [
             'pageTitle' => 'Espace Jury - Amathéo Godard',
             'documents' => $documents,
+            // Si aucun fichier n'est trouvé, on met la date du jour par défaut
+            'lastUpdate' => $lastTimestamp > 0 ? date('d/m/Y', $lastTimestamp) : date('d/m/Y'),
         ];
 
         return view('jury.dashboard', $data);
