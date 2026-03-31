@@ -12,11 +12,23 @@
         @php
         $projects = [
         [
+        'title' => 'GameVault - Bibliothèque de Jeux',
+        'description' => 'Application web de gestion de ludothèque personnelle. Permet de lister, filtrer et noter ses jeux vidéo. Projet en cours de développement incluant une interface dynamique et une base de données relationnelle.',
+        'image' => 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1080&q=80',
+        'tags' => ['PHP', 'MySQL'],
+        ],
+        [
+        'title' => 'Site Vitrine & CMS sur mesure',
+        'description' => 'Développement d’un site web d’entreprise incluant un mini-CMS personnalisé. Le système intègre un éditeur WYSIWYG permettant la modification dynamique du contenu des pages publiques en toute simplicité.',
+        'image' => 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1080&q=80',
+        'tags' => ['PHP', 'MySQL'],
+        ],
+        [
         'title' => 'Carte Débit Temporaire',
         'description' => 'Carte Débit Temporaire est un projet Java permettant de créer et gérer des cartes de débit temporaires. Il facilite la gestion des cartes à durée limitée et le suivi des transactions associées.',
         'image' => '/images/projets/projet_carteDébit.png',
         'tags' => ['Java'],
-        'github' => 'https://github.com/AmatheoGodard/Carte_Debit',
+        'github' => 'https://github.com/AmatheoGodard/Pj_CarteDebit',
         ],
         [
         'title' => 'Nuit de l\'Informatique 2025',
