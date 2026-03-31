@@ -68,7 +68,7 @@ class JuryController extends Controller
             [
                 'title' => 'Attestations de Stage - 85 Micro',
                 'description' => 'Attestations et conventions de stage',
-                'filename' => 'Attestation_de_stage_85_Micro.pdf',
+                'filename' => 'Attestation_de_stage_85Micro.pdf',
                 'icon' => 'award',
                 'category' => 'Stages',
                 'size' => $this->getFileSize('Attestation_de_stage_85Micro.pdf'),  
