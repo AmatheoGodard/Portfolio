@@ -127,11 +127,11 @@
 
     <!-- Modal -->
     <div id="projectModal" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-xl">
+        <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-xl" onclick="event.stopPropagation();">
             <div class="relative">
                 <img class="w-full h-64 object-cover modal-image" src="" alt="">
-                <button type="button" class="absolute top-4 right-4 modal-close p-2 bg-white rounded-full shadow hover:bg-red-500 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900 hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <button type="button" onclick="closeModal()" class="absolute top-4 right-4 p-2 bg-white rounded-full shadow hover:bg-red-500 transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -141,15 +141,18 @@
                 <p class="text-gray-600 mt-3 modal-desc"></p>
                 <div class="mt-4 modal-tags flex flex-wrap gap-2"></div>
                 <div class="mt-6 flex gap-3">
-                    <!-- Boutons stylés -->
-                    <a target="_blank" rel="noopener" class="modal-github inline-flex items-center gap-2 px-5 py-2 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-700 transition hidden" href="#">
+                    <a id="modalGithub" target="_blank" rel="noopener"
+                        onclick="if(this.href && this.href !== '#') { window.open(this.href, '_blank'); } event.stopPropagation(); return false;"
+                        class="inline-flex items-center gap-2 px-5 py-2 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-700 transition hidden" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.5 7.8 11c.6.1.8-.3.8-.6v-2.2c-3.1.7-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.6 1.8.6 1.8 1.4 2.5 3.8 1.8 4.7 1.4.1-1.1.5-1.8.9-2.2-2.5-.3-5.2-1.2-5.2-5.5 0-1.2.4-2.2 1-3-.1-.3-.4-1.5.1-3.2 0 0 .8-.3 2.8 1c.8-.2 1.6-.3 2.4-.3s1.6.1 2.4.3c2-1.3 2.8-1 2.8-1 .5 1.7.2 2.9.1 3.2.6.8 1 1.8 1 3 0 4.3-2.7 5.2-5.2 5.5.5.4 1 1.1 1 2.2v3.2c0 .3.2.7.8.6C20.7 21.5 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z" />
                         </svg>
                         GitHub
                     </a>
 
-                    <a target="_blank" rel="noopener" class="modal-demo inline-flex items-center gap-2 px-5 py-2 bg-indigo-500 text-white rounded-full font-semibold hover:bg-indigo-600 transition hidden" href="#">
+                    <a id="modalDemo" target="_blank" rel="noopener"
+                        onclick="if(this.href && this.href !== '#') { window.open(this.href, '_blank'); } event.stopPropagation(); return false;"
+                        class="inline-flex items-center gap-2 px-5 py-2 bg-indigo-500 text-white rounded-full font-semibold hover:bg-indigo-600 transition hidden" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
                         </svg>
@@ -164,65 +167,61 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('projectModal');
-            const modalImage = modal.querySelector('.modal-image');
-            const modalTitle = modal.querySelector('.modal-title');
-            const modalDesc = modal.querySelector('.modal-desc');
-            const modalTags = modal.querySelector('.modal-tags');
-            const modalGithub = modal.querySelector('.modal-github');
-            const modalDemo = modal.querySelector('.modal-demo');
-            const closeBtn = modal.querySelector('.modal-close');
 
-            function openModal(proj) {
-                modalImage.src = proj.image || '';
-                modalImage.alt = proj.title || '';
-                modalTitle.textContent = proj.title || '';
-                modalDesc.textContent = proj.description || '';
-                modalTags.innerHTML = (proj.tags || []).map(t => `<span class="px-3 py-1 bg-indigo-100 text-indigo-500 rounded-full text-sm font-medium">${t}</span>`).join(' ');
-                if (proj.github) {
-                    modalGithub.href = proj.github;
-                    modalGithub.classList.remove('hidden');
-                } else {
-                    modalGithub.classList.add('hidden');
-                }
-                if (proj.demo) {
-                    modalDemo.href = proj.demo;
-                    modalDemo.classList.remove('hidden');
-                } else {
-                    modalDemo.classList.add('hidden');
-                }
-                modal.classList.remove('hidden');
-                document.body.classList.add('overflow-hidden');
-            }
-
-            function closeModal() {
+            // Fonction globale pour fermer
+            window.closeModal = function() {
                 modal.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
-            }
+                document.body.style.overflow = 'auto';
+            };
 
-            document.querySelectorAll('[data-project]').forEach(card => {
-                card.addEventListener('click', () => {
-                    const proj = JSON.parse(card.getAttribute('data-project'));
-                    openModal(proj);
-                });
+            // Gestion du clic sur les cartes
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Si on clique sur un lien de la carte elle-même, on laisse faire
+                    if (e.target.closest('a')) return;
 
-                card.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') card.click();
-                });
+                    const proj = JSON.parse(this.getAttribute('data-project'));
 
-                // ⚡ Stop propagation sur les boutons overlay pour ne pas ouvrir le modal
-                card.querySelectorAll('a').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
+                    // Injection des textes et images
+                    modal.querySelector('.modal-image').src = proj.image;
+                    modal.querySelector('.modal-title').textContent = proj.title;
+                    modal.querySelector('.modal-desc').textContent = proj.description;
+
+                    // Gestion des Tags
+                    const tagContainer = modal.querySelector('.modal-tags');
+                    tagContainer.innerHTML = '';
+                    proj.tags.forEach(tag => {
+                        tagContainer.innerHTML += `<span class="px-3 py-1 bg-indigo-100 text-indigo-500 rounded-full text-sm font-medium">${tag}</span>`;
                     });
+
+                    // MISE À JOUR DES LIENS (Crucial pour le onclick)
+                    const btnGit = document.getElementById('modalGithub');
+                    const btnDemo = document.getElementById('modalDemo');
+
+                    if (proj.github) {
+                        btnGit.href = proj.github;
+                        btnGit.classList.remove('hidden');
+                    } else {
+                        btnGit.href = "#";
+                        btnGit.classList.add('hidden');
+                    }
+
+                    if (proj.demo) {
+                        btnDemo.href = proj.demo;
+                        btnDemo.classList.remove('hidden');
+                    } else {
+                        btnDemo.href = "#";
+                        btnDemo.classList.add('hidden');
+                    }
+
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
                 });
             });
 
-            closeBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
+            // Fermer si clic sur le fond noir
+            modal.addEventListener('click', function(e) {
                 if (e.target === modal) closeModal();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') closeModal();
             });
         });
     </script>
