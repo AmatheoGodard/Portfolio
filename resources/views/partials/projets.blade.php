@@ -11,12 +11,12 @@
 
         @php
         $projects = [
-        [
-        'title' => 'GameVault - Bibliothèque de Jeux',
-        'description' => 'Application web de gestion de ludothèque personnelle. Permet de lister, filtrer et noter ses jeux vidéo. Projet en cours de développement incluant une interface dynamique et une base de données relationnelle.',
-        'image' => 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1080&q=80',
-        'tags' => ['PHP', 'MySQL'],
-        ],
+//        [
+//        'title' => 'GameVault - Bibliothèque de Jeux',
+//        'description' => 'Application web de gestion de ludothèque personnelle. Permet de lister, filtrer et noter ses jeux vidéo. Projet en cours de développement incluant une interface dynamique et une base de données relationnelle.',
+//        'image' => 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1080&q=80',
+//        'tags' => ['PHP', 'MySQL'],
+//        ],
         [
         'title' => 'Site Vitrine & CMS sur mesure',
         'description' => 'Développement d’un site web d’entreprise incluant un mini-CMS personnalisé. Le système intègre un éditeur WYSIWYG permettant la modification dynamique du contenu des pages publiques en toute simplicité.',

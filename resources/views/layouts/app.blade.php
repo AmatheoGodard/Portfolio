@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ $metaDescription ?? 'Portfolio d\'Amathéo Godard' }}">
     <meta name="author" content="Amathéo Godard">
-    <title>{{ $pageTitle ?? 'Portfolio - Amathéo Godard' }}</title>
+    <title>{{ $pageTitle ?? 'Amathéo GODARD - Développeur' }}</title>
+    <meta name="description" content="Découvrez le portfolio de Amathéo Godard, développeur. Projets, compétences et parcours professionnel.">
 
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
