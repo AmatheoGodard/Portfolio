@@ -35,10 +35,6 @@
                         dans la création d'applications modernes et performantes. Mon parcours m'a permis 
                         d'acquérir des compétences solides en programmation et en gestion de projets.
                     </p>
-                    <p>
-                        Je recherche actuellement des opportunités de stage pour 
-                        continuer à développer mes compétences et contribuer à des projets innovants.
-                    </p>
                 </div>
 
                 <div class="pt-4">
