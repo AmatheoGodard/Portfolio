@@ -98,7 +98,7 @@
         // Avant de Cliquer
         ['platform' => 'avantCliquer', 'name' => 'Avant de Cliquer - La Cybersécurité au quotidien', 'image' => 'images/certifications/AvantCliquer/La_cybersécurité_au_quotidien.png'],
         ['platform' => 'avantCliquer', 'name' => 'Avant de Cliquer - Les bonnes pratiques de la cybersécurité', 'image' => 'images/certifications/AvantCliquer/Les_bonnes_pratiques_cyber.png'],
-        ['platform' => 'avantCliquer', 'name' => 'Avant de Cliquer - Sensibilisation initiale sur le phishing', 'image' => 'images/certifications/AvantCliquer/Sensibilisation_initiale_sur_le_phishing.png'],
+        ['platform' => 'avantCliquer', 'name' => 'Avant de Cliquer - Sensibilisation initiale sur le phishing', 'image' => 'images/certifications/AvantCliquer/Sensibilisation_initiale_sur_le_Phishing.png'],
         ];
         @endphp
 
