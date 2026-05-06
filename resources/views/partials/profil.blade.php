@@ -37,7 +37,7 @@
                     </p>
                 </div>
 
-                <div class="pt-4">
+                <!-- <div class="pt-4">
                     <a 
                         href="{{ route('cv.download') }}" 
                         class="btn-primary inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors"
@@ -45,7 +45,7 @@
                         <i data-lucide="download" class="w-5 h-5"></i>
                         Télécharger mon CV
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
