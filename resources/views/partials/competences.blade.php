@@ -63,13 +63,11 @@
 </section>
 
 
-<!-- Certifications Section (inchangé) -->
+<!-- Certifications Section -->
 <section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-                Certifications
-            </h2>
+            <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4"> Certifications </h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
                 Certifications attestant de mes compétences techniques
             </p>
@@ -77,43 +75,53 @@
 
         @php
         $certifications = [
-        [
-        'name' => 'ANSSI - Fondamentaux de la sécurité numérique',
-        'image' => 'images/certifications/ANSSI/Certification_ANSSI.png',
-        ],
-        [
-        'name' => 'PIX',
-        'image' => 'images/certifications/Pix/Certification_PIX.png',
-        ],
-        [
-        'name' => 'SoloLearn - HTML',
-        'image' => 'images/certifications/Sololearn/Introduction_HTML.jpg',
-        ],
-        [
-        'name' => 'SoloLearn - CSS',
-        'image' => 'images/certifications/Sololearn/Introduction_CSS.png',
-        ],
-        [
-        'name' => 'SoloLearn - SQL',
-        'image' => 'images/certifications/Sololearn/Introduction_SQL.png',
-        ],
-        [
-        'name' => 'SoloLearn - Technologies pour tous',
-        'image' => 'images/certifications/Sololearn/Technologie_pour_tous.jpg',
-        ],
+        ['platform' => 'anssi', 'name' => 'ANSSI - Fondamentaux de la sécurité numérique', 'image' => 'images/certifications/ANSSI/Certification_ANSSI.png'],
+        ['platform' => 'pix', 'name' => 'PIX', 'image' => 'images/certifications/Pix/Certification_PIX.png'],
+
+        // Sololearn
+        ['platform' => 'sololearn', 'name' => 'SoloLearn - HTML', 'image' => 'images/certifications/Sololearn/Introduction_HTML.jpg'],
+        ['platform' => 'sololearn', 'name' => 'SoloLearn - CSS', 'image' => 'images/certifications/Sololearn/Introduction_CSS.png'],
+        ['platform' => 'sololearn', 'name' => 'SoloLearn - SQL', 'image' => 'images/certifications/Sololearn/Introduction_SQL.png'],
+        ['platform' => 'sololearn', 'name' => 'SoloLearn - Technologies pour tous', 'image' => 'images/certifications/Sololearn/Technologie_pour_tous.jpg'],
+
+        /*// OpenClassrooms
+        ['platform' => 'openclassrooms', 'name' => 'OpenClassrooms - Créer votre site web avec HTML5 & CSS3', 'image' => 'images/certifications/OpenClassrooms/Certification_OpenClassrooms_Java.png'],
+        ['platform' => 'openclassrooms', 'name' => 'OpenClassrooms - Concevez votre site web avec PHP et MySQL', 'image' => 'images/certifications/OpenClassrooms/Certification_OpenClassrooms_PHP.png'],
+        ['platform' => 'openclassrooms', 'name' => 'OpenClassrooms - Mettez en ligne votre site web', 'image' => 'images/certifications/OpenClassrooms/Certification_OpenClassrooms_SQL.png'],
+        ['platform' => 'openclassrooms', 'name' => 'OpenClassrooms - Comprendre le web', 'image' => 'images/certifications/OpenClassrooms/Certification_OpenClassrooms_Java.png'],
+        ['platform' => 'openclassrooms', 'name' => 'OpenClassrooms - Apprenez à programmer en Java', 'image' => 'images/certifications/OpenClassrooms/Certification_OpenClassrooms_Java.png'],
+
+        // Udemy
+        ['platform' => 'udemy', 'name' => 'Udemy - Programmation Orientée Objet en Java', 'image' => 'images/certifications/Udemy/Certification_Udemy_Java.png'],
+        ['platform' => 'udemy', 'name' => 'Udemy - Apprendre à programmer en PHP', 'image' => 'images/certifications/Udemy/Certification_Udemy_PHP.png'],
+*/
+        // Avant de Cliquer
+        ['platform' => 'avantCliquer', 'name' => 'Avant de Cliquer - La Cybersécurité au quotidien', 'image' => 'images/certifications/AvantCliquer/La_cybersécurité_au_quotidien.png'],
+        ['platform' => 'avantCliquer', 'name' => 'Avant de Cliquer - Les bonnes pratiques de la cybersécurité', 'image' => 'images/certifications/AvantCliquer/Les_bonnes_pratiques_cyber.png'],
+        ['platform' => 'avantCliquer', 'name' => 'Avant de Cliquer - Sensibilisation initiale sur le phishing', 'image' => 'images/certifications/AvantCliquer/Sensibilisation_initiale_sur_le_phishing.png'],
         ];
         @endphp
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- MINI MENU DE FILTRAGE -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="filter-btn active px-6 py-2 rounded-full border border-indigo-600 bg-indigo-600 text-white transition-all duration-300 shadow-md" data-filter="all">Tous</button>
+            <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white text-gray-700 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300" data-filter="sololearn">SoloLearn</button>
+            <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white text-gray-700 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300" data-filter="anssi">ANSSI / PIX</button>
+            <!-- <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white text-gray-700 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300" data-filter="openclassrooms">OpenClassrooms</button>
+            <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white text-gray-700 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300" data-filter="udemy">Udemy</button> -->
+            <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 bg-white text-gray-700 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300" data-filter="avantCliquer">Avant de Cliquer</button>
+            <!-- Ajoute les boutons pour OpenClassrooms ou Udemy si besoin -->
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="certs-container">
             @foreach($certifications as $cert)
-            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center group cursor-pointer certification-card" data-cert='@json($cert)'>
-                <img
-                    src="{{ asset($cert['image']) }}"
-                    alt="Certification {{ $cert['name'] }}"
+            <!-- On ajoute data-platform pour le filtrage -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center group cursor-pointer certification-card"
+                data-platform="{{ $cert['platform'] }}"
+                data-cert='@json($cert)'>
+                <img src="{{ asset($cert['image']) }}" alt="Certification {{ $cert['name'] }}"
                     class="certification-img h-32 mx-auto object-contain mb-6 group-hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-bold text-gray-900">
-                    {{ $cert['name'] }}
-                </h3>
+                <h3 class="text-xl font-bold text-gray-900"> {{ $cert['name'] }} </h3>
             </div>
             @endforeach
         </div>
@@ -144,7 +152,39 @@
         const modalTitle = modal.querySelector('.modal-title');
         const closeBtn = modal.querySelector('.modal-close');
 
-        document.querySelectorAll('.certification-card').forEach(card => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const certCards = document.querySelectorAll('.certification-card');
+
+        // --- LOGIQUE DE FILTRAGE ---
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                // Mise à jour du style des boutons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600', 'active');
+                    b.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+                });
+                btn.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600', 'active');
+                btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+
+                // Filtrage des cartes avec une petite animation
+                certCards.forEach(card => {
+                    const platform = card.getAttribute('data-platform');
+
+                    if (filter === 'all' || platform === filter || (filter === 'anssi' && (platform === 'anssi' || platform === 'pix'))) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // --- LOGIQUE MODALE (Ta logique existante) ---
+        certCards.forEach(card => {
             card.addEventListener('click', () => {
                 const cert = JSON.parse(card.getAttribute('data-cert'));
                 modalImage.src = cert.image;
