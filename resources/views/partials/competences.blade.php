@@ -1,4 +1,4 @@
-<section id="competences" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+<section id="competences" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
@@ -64,7 +64,7 @@
 
 
 <!-- Certifications Section -->
-<section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+<section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4"> Certifications </h2>

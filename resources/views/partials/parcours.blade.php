@@ -153,3 +153,135 @@
     </div>
     </div>
 </section>
+
+@php
+$experiences = [
+    [
+        'title' => 'Concepteur Développeur d\'Applications - Stage',
+        'company' => '85 Micro Informatique',
+        'period' => 'Février 2026 - Mars 2026',
+        'description' => [
+            'Développement de nouvelles fonctionnalités sur une application interne en PHP.',
+            'Développement d\'un site web vitrine avec un CMS WYSIWYG intégrant une base de données MySQL.',
+            'Dépannages informatiques et support technique pour les clients de l\'entreprise.'
+        ],
+        'tags' => ['PHP', 'MySQL', 'CMS', 'Développement Web', 'Dépannage', 'Support Technique'],
+        'icon' => 'code-2'
+    ],
+    [
+        'title' => 'La nuit de l\'Informatique',
+        'company' => 'Les étudiants de BTS SIO du Campus la Futaie - Les ÀFutais',
+        'period' => '4 & 5 Décembre 2025',
+        'description' => [
+            'Participation à l\'organisation et la réalisation de projets informatiques.',
+            'Développement d\'une application en PHP.',
+            'Collaboration avec d\'autres étudiants pour créer des solutions innovantes.'
+        ],
+        'tags' => ['PHP', 'MySQL', 'Développement Web'],
+        'icon' => 'terminal'
+    ],
+    [
+        'title' => 'Technicien de Maintenance Informatique - Stage',
+        'company' => 'Communauté de Communes de Sèvremoine',
+        'period' => 'Mai 2025 - Juin 2025',
+        'description' => [
+            'Maintenance et dépannage de matériel informatique pour les clients de l\'entreprise.',
+            'Installation et configuration de logiciels et systèmes d\'exploitation.',
+            'Assistance technique et support aux utilisateurs.'
+        ],
+        'tags' => ['Maintenance Informatique', 'Dépannage', 'Support Technique'],
+        'icon' => 'monitor'
+    ],
+    [
+        'title' => 'Développeur Full-Stack - Stage',
+        'company' => 'L\'Ordinateur et vous',
+        'period' => 'Janvier 2024',
+        'description' => [
+            'Développement de nouvelles fonctionnalités sur une application interne en PHP et JavaScript.'
+        ],
+        'tags' => ['PHP', 'JavaScript', 'HTML', 'CSS', 'Développement Web'],
+        'icon' => 'code'
+    ]
+];
+@endphp
+
+<section id="experiences" class="py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto relative">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+                Expériences Professionnelles
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Mise en pratique de mes compétences techniques au service de projets concrets.
+            </p>
+        </div>
+
+        <div class="hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 -right-6 justify-between z-20 pointer-events-none">
+            <button onclick="scrollGrid('left')" class="pointer-events-auto w-12 h-12 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button onclick="scrollGrid('right')" class="pointer-events-auto w-12 h-12 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="experienceGrid" class="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory scrollbar-hide scroll-smooth" style="scrollbar-width: none; -ms-overflow-style: none;">
+            @foreach($experiences as $exp)
+            <div class="min-w-[85%] md:min-w-[450px] flex-shrink-0 snap-center">
+                <div class="h-full bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex flex-col mb-6">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                                    <i data-lucide="{{ $exp['icon'] }}" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 leading-tight">{{ $exp['title'] }}</h3>
+                            </div>
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <p class="text-lg font-medium text-indigo-500">{{ $exp['company'] }}</p>
+                                <span class="px-3 py-1 bg-white text-gray-500 rounded-full text-xs font-semibold border border-gray-100 shadow-sm">
+                                    {{ $exp['period'] }}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            @foreach($exp['description'] as $item)
+                            <li class="flex items-start">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-indigo-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span class="text-gray-600 text-sm">{{ $item }}</span>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 border-t border-gray-200 flex flex-wrap gap-2">
+                        @foreach($exp['tags'] as $tag)
+                        <span class="px-3 py-1 bg-white text-indigo-600 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-indigo-50">
+                            {{ $tag }}
+                        </span>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<script>
+    function scrollGrid(direction) {
+        const grid = document.getElementById('experienceGrid');
+        const scrollAmount = 480; // Correspond environ à la largeur d'une carte + gap
+        
+        if (direction === 'left') {
+            grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+            grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }
+</script>
+
+<style>
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+</style>
