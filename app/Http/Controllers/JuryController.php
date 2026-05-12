@@ -18,27 +18,11 @@ class JuryController extends Controller
         // Liste des documents disponibles pour le jury
         $documents = [
             [
-                'title' => 'Curriculum Vitae',
-                'description' => 'CV détaillé de Amathéo Godard',
-                'filename' => 'CV_Amatheo_Godard.pdf',
-                'icon' => 'file-text',
-                'category' => 'Profil',
-                'size' => $this->getFileSize('CV_Amatheo_Godard.pdf'),
-            ],
-            [
-                'title' => 'Certifications',
-                'description' => 'Certificats et formations complémentaires',
-                'filename' => 'Dossier_certification.tar.gz',
-                'icon' => 'shield-check',
-                'category' => 'Profil',
-                'size' => $this->getFileSize('Dossier_certification.tar.gz'),
-            ],
-            [
                 'title' => 'Tableau de Synthèse',
                 'description' => 'Tableau récapitulatif des compétences et réalisations',
                 'filename' => 'E5_tableau_de_synthese_Amatheo_GODARD.pdf',
                 'icon' => 'table',
-                'category' => 'Documents BTS',
+                'category' => 'Documents Épreuve E5',
                 'size' => $this->getFileSize('E5_tableau_de_synthese_Amatheo_GODARD.pdf'),
             ],
             [
@@ -46,7 +30,7 @@ class JuryController extends Controller
                 'description' => 'Dossier de preuve complet pour l\'épreuve E5',
                 'filename' => 'Dossier_preuve_E5.pdf',
                 'icon' => 'file-text',
-                'category' => 'Documents BTS',
+                'category' => 'Documents Épreuve E5',
                 'size' => $this->getFileSize('Dossier_preuve_E5.pdf'),
             ],
             [
@@ -54,7 +38,7 @@ class JuryController extends Controller
                 'description' => 'Documents annexes du dossier',
                 'filename' => 'Documents_Annexe.tar.gz',
                 'icon' => 'file-text',
-                'category' => 'Documents BTS',
+                'category' => 'Documents Épreuve E5',
                 'size' => $this->getFileSize('Documents_Annexe.tar.gz'),
             ],
             [
@@ -73,6 +57,22 @@ class JuryController extends Controller
                 'category' => 'Stages',
                 'size' => $this->getFileSize('Attestation_de_stage_85Micro.pdf'),  
             ],
+            [
+                'title' => 'Curriculum Vitae',
+                'description' => 'CV détaillé de Amathéo Godard',
+                'filename' => 'CV_Amatheo_Godard.pdf',
+                'icon' => 'file-text',
+                'category' => 'Profil',
+                'size' => $this->getFileSize('CV_Amatheo_Godard.pdf'),
+            ],
+            [
+                'title' => 'Certifications',
+                'description' => 'Certificats et formations complémentaires',
+                'filename' => 'Dossier_certification.tar.gz',
+                'icon' => 'shield-check',
+                'category' => 'Profil',
+                'size' => $this->getFileSize('Dossier_certification.tar.gz'),
+            ]
         ];
 
         // --- AJOUT : Calcul de la dernière mise à jour ---
