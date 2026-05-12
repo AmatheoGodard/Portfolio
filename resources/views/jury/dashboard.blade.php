@@ -139,7 +139,7 @@
 
         <!-- Documents Section -->
         <div class="mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">Documents du de l'épreuve E5</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Documents de l'épreuve E5</h3>
 
             @php
             $categories = collect($documents)->groupBy('category');
